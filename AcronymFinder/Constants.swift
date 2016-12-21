@@ -20,6 +20,7 @@ extension NactemClient {
     // MARK: - JSONKeys
     struct JSONKeys {
         static let fullForm = "lf"
+        static let longFormObjects = "lfs"
         static let abbreviation = "sf"
         static let frequency = "freq"
         static let startYear = "since"

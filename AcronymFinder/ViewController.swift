@@ -14,8 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        NactemClient.shared.getLongForms(from: "HMM") {
+        NactemClient.shared.getNactemObjects(from: "HMM") {
             (data, error) in
+            if let data = data {
+                print("Abbreviation: \(data.abbreviation), First of lfs: \(data.longFormObjects[0])")
+            }
         }
     }
 }

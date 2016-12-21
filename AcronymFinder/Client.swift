@@ -11,9 +11,6 @@ import Alamofire
 
 class NactemClient: NSObject {
     
-    // MARK: - Properties
-    
-    
     // MARK: - Singleton
     static var shared = NactemClient()
     
