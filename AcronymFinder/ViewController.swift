@@ -9,15 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        NactemClient.shared.getNactemObjects(from: "HMM") {
+        NactemClient.shared.getNactemObjects(from: "23lksdlk") {
             (data, error) in
-            if let data = data {
-                print("Abbreviation: \(data.abbreviation), First of lfs: \(data.longFormObjects[0])")
+            if let error = error {
+                // FIXME: - Present error model (localized error) whenever an error occurs.
+                print(error.localizedDescription)
+            }
+            if let acronymObject = data {
+                print("\(acronymObject.abbreviation)\n\n\(acronymObject.longFormObjects)")
             }
         }
     }

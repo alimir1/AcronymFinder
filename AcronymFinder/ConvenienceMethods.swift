@@ -19,12 +19,13 @@ extension NactemClient {
             }
             guard error == nil else { completionHandler(nil, error); return}
             guard let JSON = data as? [[String : AnyObject]] else {sendError(error: "Error in JSON object."); return }
+            guard JSON.count > 0 else {sendError(error: "No information was found for that acronym."); return }
             let json = JSON[0]
             if let abbreviation = json[JSONKeys.abbreviation] as? String, let longForms = json[JSONKeys.longFormObjects] as? [[String : AnyObject]] {
                 let longFormObjects = longForms.map {LongformObject(dictionary: $0)}
                 completionHandler(NactemObject(abbreviation: abbreviation, longFormObjects: longFormObjects), nil)
             } else {
-                sendError(error: "Could not parse JSON object.")
+                sendError(error: "Something went wrong.")
             }
         }
     }

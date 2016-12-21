@@ -38,14 +38,14 @@ class NactemClient: NSObject {
             }
             
             guard response.result.isSuccess == true else {
-                sendError(error: "Response not successful.")
+                sendError(error: "Something went wrong in the Nactem server.")
                 return
             }
             
             if let JSON = response.result.value {
                 completionHandler(JSON as AnyObject?, nil)
             } else {
-                sendError(error: "Could not get JSON data.")
+                sendError(error: "Something went wrong.")
             }
         }
     }
