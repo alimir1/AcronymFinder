@@ -12,7 +12,7 @@ import Alamofire
 class NactemClient: NSObject {
     
     // MARK: - Singleton
-    static var shared = NactemClient()
+    static let shared = NactemClient()
     
     // MARK: - Initializers
     override init() {
