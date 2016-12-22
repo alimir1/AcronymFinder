@@ -19,6 +19,13 @@ class ListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.userTappedOut))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    // MARK: - Actions
+    func userTappedOut() {
+        textField.resignFirstResponder()
     }
 }
 
@@ -38,7 +45,7 @@ extension ListViewController {
     }
 }
 
-// MARK: - TextFieldDelegates
+// MARK: - TextFieldDelegate
 
 extension ListViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -53,8 +60,16 @@ extension ListViewController: UITextFieldDelegate {
                 self.tableView.reloadData()
             }
         }
+        textField.resignFirstResponder()
         return true
     }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        self.acronymInformations.removeAll()
+        self.tableView.reloadData()
+        return true
+    }
+    
 }
 
 
