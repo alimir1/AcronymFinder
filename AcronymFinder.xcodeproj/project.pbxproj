@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4926AF3A1E0B699E00620C01 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926AF391E0B699E00620C01 /* ListViewController.swift */; };
 		49AAEFBC1E0A627B0076765B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAEFBB1E0A627B0076765B /* AppDelegate.swift */; };
-		49AAEFBE1E0A627B0076765B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAEFBD1E0A627B0076765B /* ViewController.swift */; };
 		49AAEFC11E0A627B0076765B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49AAEFBF1E0A627B0076765B /* Main.storyboard */; };
 		49AAEFC31E0A627B0076765B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AAEFC21E0A627B0076765B /* Assets.xcassets */; };
 		49AAEFC61E0A627B0076765B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49AAEFC41E0A627B0076765B /* LaunchScreen.storyboard */; };
@@ -21,9 +21,9 @@
 
 /* Begin PBXFileReference section */
 		35AACF211A246E7B2E9D2119 /* Pods-AcronymFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-AcronymFinder/Pods-AcronymFinder.release.xcconfig"; sourceTree = "<group>"; };
+		4926AF391E0B699E00620C01 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		49AAEFB81E0A627B0076765B /* AcronymFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcronymFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AAEFBB1E0A627B0076765B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		49AAEFBD1E0A627B0076765B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		49AAEFC01E0A627B0076765B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49AAEFC21E0A627B0076765B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49AAEFC51E0A627B0076765B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				49AAEFBB1E0A627B0076765B /* AppDelegate.swift */,
-				49AAEFBD1E0A627B0076765B /* ViewController.swift */,
+				4926AF391E0B699E00620C01 /* ListViewController.swift */,
 				49AAEFCF1E0A68070076765B /* NactemAPI */,
 				49AAEFBF1E0A627B0076765B /* Main.storyboard */,
 				49AAEFC21E0A627B0076765B /* Assets.xcassets */,
@@ -235,9 +235,9 @@
 				49AAEFD31E0A68960076765B /* Constants.swift in Sources */,
 				49AAEFD11E0A682B0076765B /* Client.swift in Sources */,
 				49AAEFCE1E0A632D0076765B /* Model.swift in Sources */,
-				49AAEFBE1E0A627B0076765B /* ViewController.swift in Sources */,
 				49AAEFBC1E0A627B0076765B /* AppDelegate.swift in Sources */,
 				49AAEFD51E0A6B3D0076765B /* ConvenienceMethods.swift in Sources */,
+				4926AF3A1E0B699E00620C01 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
