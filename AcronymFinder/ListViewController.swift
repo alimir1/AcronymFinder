@@ -19,13 +19,6 @@ class ListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.userTappedOut))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    // MARK: - Actions
-    func userTappedOut() {
-        textField.resignFirstResponder()
     }
 }
 
@@ -49,18 +42,20 @@ extension ListViewController {
 
 extension ListViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        guard textField.text != "" else { return true }
         NactemClient.shared.getNactemObjects(from: textField.text!) {
             (data, error) in
             if let error = error {
-                // FIXME: - Present error model (localized error) whenever an error occurs.
-                print(error.localizedDescription)
+                let alertCtrl = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
+                alertCtrl.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertCtrl, animated: true, completion: nil)
             }
             if let data = data {
                 self.acronymInformations = data
                 self.tableView.reloadData()
             }
         }
-        textField.resignFirstResponder()
         return true
     }
     
