@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class ListViewController: UITableViewController {
     // MARK: - Properties
@@ -19,6 +20,23 @@ class ListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func getAcronymInfo(acronym: String) {
+        MBProgressHUD.showAdded(to: self.navigationController!.view, animated: true)
+        NactemClient.shared.getNactemObjects(from: acronym) {
+            (data, error) in
+            MBProgressHUD.hide(for: self.navigationController!.view, animated: false)
+            if let error = error {
+                let alertCtrl = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
+                alertCtrl.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertCtrl, animated: true, completion: nil)
+            }
+            if let data = data {
+                self.acronymInformations = data
+                self.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -49,18 +67,8 @@ extension ListViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         guard textField.text != "" else { return true }
-        NactemClient.shared.getNactemObjects(from: textField.text!) {
-            (data, error) in
-            if let error = error {
-                let alertCtrl = UIAlertController(title: error.localizedDescription, message: nil, preferredStyle: .alert)
-                alertCtrl.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alertCtrl, animated: true, completion: nil)
-            }
-            if let data = data {
-                self.acronymInformations = data
-                self.tableView.reloadData()
-            }
-        }
+        getAcronymInfo(acronym: textField.text!)
+        
         return true
     }
     

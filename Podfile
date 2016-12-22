@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'AcronymFinder' do
     pod 'Alamofire', '~> 4.0'
+    pod 'MBProgressHUD', '~> 1.0.0'
 end
