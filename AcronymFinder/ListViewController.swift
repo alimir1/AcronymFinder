@@ -9,27 +9,52 @@
 import UIKit
 
 class ListViewController: UITableViewController {
-    
+    // MARK: - Properties
     var acronymInformations = [LongformObject]()
+    
+    // MARK: - Outlets
+    @IBOutlet weak var textField: UITextField!
+    
+    // MARK: - View Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NactemClient.shared.getNactemObjects(from: "23lksdlk") {
-            (data, error) in
-            if let error = error {
-                // FIXME: - Present error model (localized error) whenever an error occurs.
-                print(error.localizedDescription)
-            }
-        }
     }
+}
 
+// MARK: - TableView Setup
+
+extension ListViewController {
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return acronymInformations.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return self.tableView.dequeueReusableCell(withIdentifier: "fullFormOfAcronym", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "fullFormOfAcronym", for: indexPath)
+        cell.textLabel?.text = acronymInformations[indexPath.row].representativeFormOfFullForm
+        return cell
     }
 }
+
+// MARK: - TextFieldDelegates
+
+extension ListViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        NactemClient.shared.getNactemObjects(from: textField.text!) {
+            (data, error) in
+            if let error = error {
+                // FIXME: - Present error model (localized error) whenever an error occurs.
+                print(error.localizedDescription)
+            }
+            if let data = data {
+                self.acronymInformations = data
+                self.tableView.reloadData()
+            }
+        }
+        return true
+    }
+}
+
+
