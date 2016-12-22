@@ -39,6 +39,7 @@ extension ListViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "informationVC", sender: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
