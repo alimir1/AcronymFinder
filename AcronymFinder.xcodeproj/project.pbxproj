@@ -16,6 +16,7 @@
 		49AAEFD11E0A682B0076765B /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAEFD01E0A682B0076765B /* Client.swift */; };
 		49AAEFD31E0A68960076765B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAEFD21E0A68960076765B /* Constants.swift */; };
 		49AAEFD51E0A6B3D0076765B /* ConvenienceMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AAEFD41E0A6B3D0076765B /* ConvenienceMethods.swift */; };
+		49F5BA7E1E0B8F2700B55F65 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F5BA7D1E0B8F2700B55F65 /* InformationViewController.swift */; };
 		D522E7434D92D3D4E3BCA059 /* Pods_AcronymFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8869644FBCBE41FABB69832E /* Pods_AcronymFinder.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		49AAEFD01E0A682B0076765B /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		49AAEFD21E0A68960076765B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49AAEFD41E0A6B3D0076765B /* ConvenienceMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvenienceMethods.swift; sourceTree = "<group>"; };
+		49F5BA7D1E0B8F2700B55F65 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		8869644FBCBE41FABB69832E /* Pods_AcronymFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AcronymFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35FC3447A3B19A9BF249CB0 /* Pods-AcronymFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AcronymFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AcronymFinder/Pods-AcronymFinder.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +73,7 @@
 			children = (
 				49AAEFBB1E0A627B0076765B /* AppDelegate.swift */,
 				4926AF391E0B699E00620C01 /* ListViewController.swift */,
+				49F5BA7D1E0B8F2700B55F65 /* InformationViewController.swift */,
 				49AAEFCF1E0A68070076765B /* NactemAPI */,
 				49AAEFBF1E0A627B0076765B /* Main.storyboard */,
 				49AAEFC21E0A627B0076765B /* Assets.xcassets */,
@@ -234,6 +237,7 @@
 			files = (
 				49AAEFD31E0A68960076765B /* Constants.swift in Sources */,
 				49AAEFD11E0A682B0076765B /* Client.swift in Sources */,
+				49F5BA7E1E0B8F2700B55F65 /* InformationViewController.swift in Sources */,
 				49AAEFCE1E0A632D0076765B /* Model.swift in Sources */,
 				49AAEFBC1E0A627B0076765B /* AppDelegate.swift in Sources */,
 				49AAEFD51E0A6B3D0076765B /* ConvenienceMethods.swift in Sources */,

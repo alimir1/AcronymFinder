@@ -36,6 +36,10 @@ extension ListViewController {
         cell.textLabel?.text = acronymInformations[indexPath.row].representativeFormOfFullForm
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "informationVC", sender: indexPath)
+    }
 }
 
 // MARK: - TextFieldDelegate
@@ -64,7 +68,20 @@ extension ListViewController: UITextFieldDelegate {
         self.tableView.reloadData()
         return true
     }
-    
+}
+
+// MARK: - Navigation
+
+extension ListViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "informationVC" {
+            let infoVC = segue.destination as! InformationViewController
+            let indexPath = sender as! IndexPath
+            infoVC.fullForm = acronymInformations[indexPath.row].representativeFormOfFullForm
+            infoVC.numOcc = String(describing: acronymInformations[indexPath.row].numberOfOccurrencesInCorpus)
+            infoVC.yearAppeared = String(describing: acronymInformations[indexPath.row].yearOfFirstTimeInCorpus)
+        }
+    }
 }
 
 
